@@ -1,0 +1,5 @@
+trace,spike_count,frequency_hz,isi_mean_ms,isi_cv,amplitude_mv,width_ms,overall
+good_neuron.csv,40,20.001,50,0.001203,80.66,1.17,PASS
+noisy_neuron.csv,40,20.001,45.17,0.2193,85.62,1.08,FAIL
+no_spikes.csv,0,0.000,nan,nan,nan,nan,FAIL
+failing_neuron.csv,16,8.000,128.2,0.1124,46.7,1.138,FAIL

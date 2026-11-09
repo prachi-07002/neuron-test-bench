@@ -1,0 +1,71 @@
+Neuron test-bench report: good_neuron.csv
+Overall: PASS
+  spikes:            40
+  duration:          2.000 s
+  frequency:         20.00 Hz
+  ISI mean / median: 50 / 50 ms
+  ISI std (jitter):  0.06014 ms
+  ISI CV (jitter):   0.001203
+  amplitude (mean):  80.66 mV
+  width FWHM (mean): 1.17 ms
+  baseline:          0.07315 mV
+Checks:
+  [PASS] spike_count: 40 (expected >= 5)
+  [PASS] frequency_hz: 20 (expected 15.0-25.0 Hz)
+  [PASS] amplitude_mv: 80.66 (expected 60.0-100.0 mV)
+  [PASS] isi_cv_jitter: 0.001203 (expected <= 0.15)
+  [PASS] width_ms: 1.17 (expected 0.5-2.5 ms)
+
+Neuron test-bench report: noisy_neuron.csv
+Overall: FAIL
+  spikes:            40
+  duration:          2.000 s
+  frequency:         20.00 Hz
+  ISI mean / median: 45.17 / 44.55 ms
+  ISI std (jitter):  9.905 ms
+  ISI CV (jitter):   0.2193
+  amplitude (mean):  85.62 mV
+  width FWHM (mean): 1.08 ms
+  baseline:          0.3765 mV
+Checks:
+  [PASS] spike_count: 40 (expected >= 5)
+  [PASS] frequency_hz: 20 (expected 15.0-25.0 Hz)
+  [PASS] amplitude_mv: 85.62 (expected 60.0-100.0 mV)
+  [FAIL] isi_cv_jitter: 0.2193 (expected <= 0.15)
+  [PASS] width_ms: 1.08 (expected 0.5-2.5 ms)
+
+Neuron test-bench report: no_spikes.csv
+Overall: FAIL
+  spikes:            0
+  duration:          2.000 s
+  frequency:         0.00 Hz
+  ISI mean / median: nan / nan ms
+  ISI std (jitter):  nan ms
+  ISI CV (jitter):   nan
+  amplitude (mean):  nan mV
+  width FWHM (mean): nan ms
+  baseline:          0.021 mV
+Checks:
+  [FAIL] spike_count: 0 (expected >= 5)
+  [FAIL] frequency_hz: 0 (expected 15.0-25.0 Hz)
+  [FAIL] amplitude_mv: nan (expected 60.0-100.0 mV)
+  [FAIL] isi_cv_jitter: nan (expected <= 0.15)
+  [FAIL] width_ms: nan (expected 0.5-2.5 ms)
+
+Neuron test-bench report: failing_neuron.csv
+Overall: FAIL
+  spikes:            16
+  duration:          2.000 s
+  frequency:         8.00 Hz
+  ISI mean / median: 128.2 / 124.2 ms
+  ISI std (jitter):  14.42 ms
+  ISI CV (jitter):   0.1124
+  amplitude (mean):  46.7 mV
+  width FWHM (mean): 1.138 ms
+  baseline:          0.06465 mV
+Checks:
+  [PASS] spike_count: 16 (expected >= 5)
+  [FAIL] frequency_hz: 8 (expected 15.0-25.0 Hz)
+  [FAIL] amplitude_mv: 46.7 (expected 60.0-100.0 mV)
+  [PASS] isi_cv_jitter: 0.1124 (expected <= 0.15)
+  [PASS] width_ms: 1.138 (expected 0.5-2.5 ms)
